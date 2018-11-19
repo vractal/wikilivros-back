@@ -1,0 +1,9 @@
+{
+ "description": "The API for Teledipity",
+ "id": "teledipity-api",
+ "links": [{
+   "href": "https://api.teledipity.com",
+   "rel": "self"
+ }],
+ "title": "Teledipity - API"
+}
