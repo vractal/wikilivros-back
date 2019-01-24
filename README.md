@@ -1,6 +1,6 @@
-# Teledipity - API
+# Rails New App - API
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/5f81c59b93f185a611da/maintainability)](https://codeclimate.com/repos/5bf2ae161b9400146a004ddd/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/5f81c59b93f185a611da/test_coverage)](https://codeclimate.com/repos/5bf2ae161b9400146a004ddd/test_coverage) [![CircleCI](https://circleci.com/gh/SeasonedSoftware/teledipity-api.svg?style=svg)](https://circleci.com/gh/SeasonedSoftware/teledipity-api)
+<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/5f81c59b93f185a611da/maintainability)](https://codeclimate.com/repos/5bf2ae161b9400146a004ddd/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/5f81c59b93f185a611da/test_coverage)](https://codeclimate.com/repos/5bf2ae161b9400146a004ddd/test_coverage) [![CircleCI](https://circleci.com/gh/SeasonedSoftware/rails-new-app.svg?style=svg)](https://circleci.com/gh/SeasonedSoftware/rails-new-app) -->
 
 ## Installation
 
@@ -31,8 +31,8 @@ If rbenv complains you don't have that ruby version, upgrade [ruby-build](https:
 
 #### Clone the repository
 ```
-$ git clone git@github.com:SeasonedSoftware/teledipity-api.git
-$ cd teledipity-api
+$ git clone git@github.com:SeasonedSoftware/rails-new-app.git
+$ cd rails-new-app
 ```
 
 #### Install local bundler
@@ -45,7 +45,7 @@ It should return something like:
 ```
 system
 ...(other ruby versions installed)...
-* 2.5.3 (set by /home/<path-to-repo-folder>/teledipity-api/.ruby-version)
+* 2.5.3 (set by /home/<path-to-repo-folder>/rails-new-app/.ruby-version)
 
 ```
 Make sure you're using the correct gemset. Run:
@@ -61,7 +61,7 @@ If both are ok, run:
 ```
 $ gem install bundler
 ```
-Verify that the bundler was installed inside `teledipity-api/.gems` folder.
+Verify that the bundler was installed inside `rails-new-app/.gems` folder.
 
 #### Use local bundler to install the other gems
 Always use this command to ensure the gems are installed in `.gems`.
