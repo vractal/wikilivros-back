@@ -21,6 +21,7 @@ Rbenv: [repo](https://github.com/rbenv/rbenv)
 Rbenv-gemset: [repo](https://github.com/jf/rbenv-gemset)
 
 #### 4. Install ruby 2.5.3
+
 ```
 $ rbenv install 2.5.3
 ```
@@ -30,57 +31,108 @@ If rbenv complains you don't have that ruby version, upgrade [ruby-build](https:
 ### Setup the project
 
 #### Clone the repository
+
 ```
 $ git clone git@github.com:SeasonedSoftware/rails-new-app.git
 $ cd rails-new-app
 ```
 
 #### Install local bundler
+
 Make sure you're running the correct ruby version. Run:
 
 ```
 rbenv versions
 ```
+
 It should return something like:
+
 ```
 system
 ...(other ruby versions installed)...
 * 2.5.3 (set by /home/<path-to-repo-folder>/rails-new-app/.ruby-version)
 
 ```
+
 Make sure you're using the correct gemset. Run:
+
 ```
 rbenv gemset active
 ```
+
 It should return:
+
 ```
 .gems global
 ```
 
 If both are ok, run:
+
 ```
 $ gem install bundler
 ```
+
 Verify that the bundler was installed inside `rails-new-app/.gems` folder.
 
 #### Use local bundler to install the other gems
+
 Always use this command to ensure the gems are installed in `.gems`.
+
 ```
 $ bin/bundle
 ```
 
+#### IF RUNNING A PROJECT THAT ALREADY EXISTS
+
 #### Set the env vars
+
 ```
 $ cp .env.sample .env
 ```
+
 Ask a colleague for the values.
 
+#### IF SETTING UP A NEW PROJECT
+
+##### Generate a new master key
+
+DO THIS ONLY WHEN SETTING UP A NEW PROJECT
+
+You can choose the editor you prefer, for example:
+
+```
+$ EDITOR="nano" bin/rails credentials:edit
+```
+
+This will create `config/credentials.yml.enc` and `config/master.key`.
+Commit `config/credentials.yml.enc` to git. Do not commit `config/master.key`.
+
+Copy the contents of `master.key` to your `.env` file at `RAILS_MASTER_KEY=` and send it to the other team members. You will need it to deploy the API too.
+
+##### Configure the api names
+
+Search for the `new-rails-api` string on the project files and change it to your project name.
+
+Some places to change:
+
+```
+circleci/config.yml
+database.yml
+config/cable.yml
+production.rb
+schema/meta.json
+```
+
+Suggestions to automate this process are welcome.
+
 #### Prepare the database
+
 ```
 $ bin/rails db:create db:migrate db:seed
 ```
 
 ## Running the server
+
 ```
 $ bin/rails s
 ```
@@ -88,18 +140,26 @@ $ bin/rails s
 You can check that it worked by browsing `localhost:3000`.
 
 ## Tests
+
 ```
 $ bin/rspec
 ```
+
 The coverage will be available on the `coverage/` folder. Open `coverage/index.html` on your browser to see details.
 
-
 #### Running the linter
+
 ```
 $ bin/rubocop
 ```
 
 ## Deployment
+
+### Setup - for new projects
+
+Create a one Heroku project for Staging and another one for Production.
+Configure the `RAILS_MASTER_KEY` env var for both heroku projects (they are the same).
+Configure the app names at `.circleci/config.yml` to match the heroku project names. Add the heroku api key.
 
 ### Staging
 
@@ -107,4 +167,4 @@ All commits to `master` branch will be pushed to staging by CircleCI.
 
 ### Production
 
-Generate a new release - all tags will be automatically pushed to production.
+Generate a new release - all tags in the format `vX`, where `X` is an integer, will be automatically pushed to production.
