@@ -7,13 +7,13 @@
   },
   "properties": {
   },
-  "description": "The API for Teledipity",
-  "id": "teledipity-api",
+  "description": "The API for a New Rails Api",
+  "id": "new-rails-api",
   "links": [
     {
-      "href": "https://api.teledipity.com",
+      "href": "https://api.new-rails-api.com",
       "rel": "self"
     }
   ],
-  "title": "Teledipity - API"
+  "title": "New Rails Api - API"
 }

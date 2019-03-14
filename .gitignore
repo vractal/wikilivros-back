@@ -16,3 +16,6 @@ coverage/
 *.png
 *.csv
 *.txt
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
