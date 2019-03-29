@@ -30,11 +30,23 @@ If rbenv complains you don't have that ruby version, upgrade [ruby-build](https:
 
 ### Setup the project
 
-#### Clone the repository
+#### Clone the repository & update git remote
 
 ```
 $ git clone git@github.com:SeasonedSoftware/new-rails-api.git
 $ cd new-rails-api
+$ git remote set-url origin [your new github URL]
+```
+
+#### Rename your project references
+
+1. First of all, rename the folder to match your project name
+2. Now access the "find and replace" of your editor and select CASE SENSITIVE
+3. Search and replace the following words:
+
+```
+NewRailsApi -> YourProjectName
+new-rails-api -> your-project-name
 ```
 
 #### Install local bundler
