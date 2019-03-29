@@ -7,10 +7,11 @@ ruby '2.5.3' # or newest one
 
 gem 'awesome_print'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'committee'
+gem 'committee', '~> 3.0.0'
 gem 'devise_token_auth', '~> 1.0.0'
+gem 'json_schema', '0.20.3' # DO NOT UPDATE THIS
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'prmd'
+gem 'prmd', '~> 0.13'
 gem 'puma', '~> 3.11'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.2'

@@ -15,6 +15,8 @@ WORKDIR /app
 COPY Gemfile /app/
 # Install dependencies
 RUN gem install bundler
-RUN bundle install --jobs 32 --retry 4
 # Copy all the rest inside work directory
 COPY . /app
+# Access /app and install gems
+RUN cd app/
+RUN bin/bundle install --jobs 32 --retry 4
