@@ -1,4 +1,4 @@
-FROM ruby:2.5
+FROM ruby:2.5.3
 # Install VIM to edit credentials.yml.enc file
 RUN apt-get update && apt-get install -y vim
 ENV EDITOR="vim --wait"
