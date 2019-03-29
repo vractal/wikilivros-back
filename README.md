@@ -153,6 +153,59 @@ The coverage will be available on the `coverage/` folder. Open `coverage/index.h
 $ bin/rubocop
 ```
 
+## Docker help section
+
+### Build the container for the project
+
+```
+$ docker-compose build
+
+options:
+--no-cache (build the entire container using no cached infos)
+```
+
+### Up the project
+
+```
+$ docker-compose up
+```
+
+### Listing running containers
+
+```
+$ docker ps
+
+This command will show the running containers, example:
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+dfb80bf0ae96        postgres:10.4       "docker-entrypoint.s…"   3 hours ago         Up 3 hours          0.0.0.0:5432->5432/tcp   new-rails-api_postgres_1
+```
+
+### Running commands using docker-compose
+
+```
+$ docker-compose run [container name] [command]
+
+example:
+
+$ docker-compose run rails bin/rails db:create
+```
+
+### Running commands on a running container
+
+```
+$ docker exec [options] [container ID] [command]
+
+options:
+
+-i (interactive)
+-t (attach terminal to command)
+
+examples:
+
+$ docker exec -it dfb80bf0ae96 bin/rails db:migrate
+```
+
 ## Deployment
 
 ### Setup - for new projects
