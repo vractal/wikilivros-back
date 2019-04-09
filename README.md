@@ -49,6 +49,10 @@ NewRailsApi -> YourProjectName
 new-rails-api -> your-project-name
 ```
 
+#### Create a new README for your project
+
+You can copy the README from [this project](https://github.com/SeasonedSoftware/brazil-lab-api/blob/master/README.md) and just change the badges and project name on title
+
 #### Install local bundler
 
 Make sure you're running the correct ruby version. Run:
