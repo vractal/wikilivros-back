@@ -1,6 +1,7 @@
 # Rails New API
 
-<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/5f81c59b93f185a611da/maintainability)](https://codeclimate.com/repos/5bf2ae161b9400146a004ddd/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/5f81c59b93f185a611da/test_coverage)](https://codeclimate.com/repos/5bf2ae161b9400146a004ddd/test_coverage) [![CircleCI](https://circleci.com/gh/SeasonedSoftware/new-rails-api.svg?style=svg)](https://circleci.com/gh/SeasonedSoftware/new-rails-api) -->
+<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/2c4bf28d85a3dab722ed/maintainability)](https://codeclimate.com/repos/5cacf7104719e67715007ce3/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2c4bf28d85a3dab722ed/test_coverage)](https://codeclimate.com/repos/5cacf7104719e67715007ce3/test_coverage) -->
 
 ## Installation
 
