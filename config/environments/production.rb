@@ -62,7 +62,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per
   # environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "new-rails-api_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "wiki-livros_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 
@@ -103,7 +103,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'put_here_the_organization_domain (eg. new-rails-api.com)',
+    domain: 'put_here_the_organization_domain (eg. wiki-livros.com)',
     address: 'smtp.sendgrid.net',
     port: 587,
     authentication: :plain,

@@ -65,10 +65,10 @@
     }
   },
   "description": "The API for a New Rails Api",
-  "id": "new-rails-api",
+  "id": "wiki-livros",
   "links": [
     {
-      "href": "https://api.new-rails-api.com",
+      "href": "https://api.wiki-livros.com",
       "rel": "self"
     }
   ],

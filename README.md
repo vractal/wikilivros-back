@@ -34,8 +34,8 @@ If rbenv complains you don't have that ruby version, upgrade [ruby-build](https:
 #### Clone the repository & update git remote
 
 ```
-$ git clone git@github.com:SeasonedSoftware/new-rails-api.git
-$ cd new-rails-api
+$ git clone git@github.com:SeasonedSoftware/wiki-livros.git
+$ cd wiki-livros
 $ git remote set-url origin [your new github URL]
 ```
 
@@ -46,8 +46,8 @@ $ git remote set-url origin [your new github URL]
 3. Search and replace the following words:
 
 ```
-NewRailsApi -> YourProjectName
-new-rails-api -> your-project-name
+WikiLivros -> YourProjectName
+wiki-livros -> your-project-name
 ```
 
 #### Create a new README for your project
@@ -67,7 +67,7 @@ It should return something like:
 ```
 system
 ...(other ruby versions installed)...
-* 2.5.3 (set by /home/<path-to-repo-folder>/new-rails-api/.ruby-version)
+* 2.5.3 (set by /home/<path-to-repo-folder>/wiki-livros/.ruby-version)
 
 ```
 
@@ -89,7 +89,7 @@ If both are ok, run:
 $ gem install bundler
 ```
 
-Verify that the bundler was installed inside `new-rails-api/.gems` folder.
+Verify that the bundler was installed inside `wiki-livros/.gems` folder.
 
 #### Use local bundler to install the other gems
 
@@ -128,7 +128,7 @@ Copy the contents of `master.key` to your `.env` file at `RAILS_MASTER_KEY=` and
 
 ##### Configure the api names
 
-Search for the `new-rails-api` string on the project files and change it to your project name.
+Search for the `wiki-livros` string on the project files and change it to your project name.
 
 Some places to change:
 
@@ -195,7 +195,7 @@ $ docker ps
 This command will show the running containers, example:
 
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-dfb80bf0ae96        postgres:10.4       "docker-entrypoint.s…"   3 hours ago         Up 3 hours          0.0.0.0:5432->5432/tcp   new-rails-api_postgres_1
+dfb80bf0ae96        postgres:10.4       "docker-entrypoint.s…"   3 hours ago         Up 3 hours          0.0.0.0:5432->5432/tcp   wiki-livros_postgres_1
 ```
 
 ### Running commands using docker-compose
