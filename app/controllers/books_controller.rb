@@ -16,6 +16,10 @@ class BooksController < ApplicationController
   # POST /books
   def create
     @book = Book.new(book_params)
+    @book.send(:cover_file).attach(io: open_file(@book.cover), filename: 'cover')
+    @book.send(:book_file).attach(io: open_file(@book.file), filename: 'file')
+    @book.cover = url_for(@book.cover_file)
+    @book.file =  url_for(@book.book_file)
 
     if @book.save
       render json: @book, status: :created, location: @book
@@ -48,4 +52,26 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :cover, :description, :author, :file)
     end
+
+    # What is the proper way of accessing instance attr programaticaly?
+    def attach_file(book, field,field_name)
+      book.send(field_name).attach(io: open_file(book[field]), filename: field)
+      url_for(book[field_name])
+    end
+
+    def open_file(encoded_file)
+      filename =
+      Rails.root.join(
+        'tmp',
+        "#{rand(36**30).to_s(36)}.#{file_extension(encoded_file)}"
+      )
+      File.open(filename, 'wb') do |f|
+        f.write Base64.decode64(encoded_file.split(',')[1])
+      end
+    File.open(filename)
+  end
+
+  def file_extension(encoded_file)
+    encoded_file.split(';').first.split('/').last
+  end
 end
